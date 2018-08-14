@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> List </title>
+</head>
+<body>
+    {% for airplane in object_list %}
+        <ul>
+            <li>
+                <h1>{{airplane.name}}</h1>
+            </li>
+            <li>
+                <p>{{airplane.weight}}</p>
+            </li>
+            <li>
+                <p>{{airplane.passengers}}</p>
+            
+            </li>
+
+            <li>    <p>{{airplane.other_info}}</p>
+            </li>
+        </ul><br>
+    {% endfor %}
+</body>
+</html>

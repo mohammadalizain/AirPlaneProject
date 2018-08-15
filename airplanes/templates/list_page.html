@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> List </title>
-</head>
-<body>
+
+{% extends "base.html" %}
+
+{% block title  %}
+    List
+{% endblock title %}
+
+
+{% block content %}
     {% for airplane in object_list %}
+
+<!--     <div>
         <ul>
             <li>
                 <h1>{{airplane.name}}</h1>
@@ -21,6 +25,29 @@
             <li>    <p>{{airplane.other_info}}</p>
             </li>
         </ul><br>
+
+        <a href="{% url 'detail-page' airplane.id %}">More Detail</a>
+</div> -->
+
+<div class="row">
+  
+ <div class="card-body">
+
+        <div class="card " style="width: 18rem;">
+  <img class="card-img-top" src="{{ airplane.picture.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">airplane.name</h5>
+    <p class="card-text">{{ airplane.other_info }}</p>
+    <a href="{% url 'detail-page' airplane.id %}" class="btn btn-primary">More Detail</a>
+  </div>
+</div>
+        
+        </div>
+
+        </div>
+
+
+
+      
     {% endfor %}
-</body>
-</html>
+    {% endblock content %}

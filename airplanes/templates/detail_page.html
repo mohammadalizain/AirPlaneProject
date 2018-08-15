@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block title  %}
+    detail
+{% endblock title %}
+
+
+{% block content %}
+   
+
+
+   <!--         <ul>
+            <li>
+                <h1>{{detail.name}}</h1>
+            </li>
+            <li>
+                <p>{{detail.weight}}</p>
+            </li>
+            <li>
+                <p>{{detail.passengers}}</p>
+            
+            </li>
+
+            <li>    <p>{{detail.other_info}}</p>
+            </li>
+        </ul><br> -->
+
+
+ <div class="card-body">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ detail.picture.url }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">detail.name</h5>
+    <p class="card-text">{{ detail.other_info }}</p>
+    <a href="{% url 'detail-page' detail.id %}" class="btn btn-primary">More Detail</a>
+  </div>
+</div>
+        
+        </div>
+       
+    {% endblock content %}

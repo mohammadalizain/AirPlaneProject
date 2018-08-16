@@ -18,12 +18,16 @@ from django.urls import  path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from airplanes.views import list_view, detail_view
+from airplanes.views import list_view, detail_view, create_view, update_view, delete_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', list_view),
+    path('index/', list_view, name="list-page"),
     path('detail/<int:id>', detail_view, name="detail-page"),
+    path('create/', create_view, name='create-page'),
+    path('update/<int:obj_id>', update_view, name='update-page'),
+    path('delete/<int:object_id>', delete_view, name='delete-page'),
+
 ]
 
 

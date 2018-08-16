@@ -38,7 +38,11 @@
   <div class="card-body">
     <h5 class="card-title">airplane.name</h5>
     <p class="card-text">{{ airplane.other_info }}</p>
-    <a href="{% url 'detail-page' airplane.id %}" class="btn btn-primary">More Detail</a>
+    <a href="{% url 'detail-page' airplane.id %}" class="btn btn-primary ml-2">More Detail</a>
+ 
+    <a href="{% url 'update-page' airplane.id %}" class="btn btn-primary">Edit</a>
+    <p></p>
+    <a href="{% url 'delete-page' airplane.id %}" class="btn btn-primary">Delete</a>
   </div>
 </div>
         

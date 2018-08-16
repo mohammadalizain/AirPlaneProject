@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from airplanes.views import list_view, detail_view, create_view, update_view, delete_view
+from api.views import ListView, Detailview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +28,8 @@ urlpatterns = [
     path('create/', create_view, name='create-page'),
     path('update/<int:obj_id>', update_view, name='update-page'),
     path('delete/<int:object_id>', delete_view, name='delete-page'),
-
+    path('List/<int:object_id>', ListView.as_view(), name='List-page'),
+    path('details/view/<int:object_id>', Detailview.as_view(), name='Detailview-page'),
 ]
 
 

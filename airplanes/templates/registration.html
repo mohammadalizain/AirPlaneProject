@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+       {% load crispy_forms_tags %}
+
+{% block title  %}
+    List
+{% endblock title %}
+        
+       
+
+<!--         <form action="{% url 'create-page' %}" method="POST" enctype="multipart/form-data">
+        	 <input type="submit" value="Create">
+    
+</form>
+ -->
+ {% block content %}
+
+ <form action="{% url 'register-page' %}" method="POST" enctype="multipart/form-data">
+ 	{% csrf_token %}
+{{form|crispy}}
+  <input type="submit" value="Submit">
+</form> 
+        
+
+    </body>
+</html>
+
+{% endblock content %}

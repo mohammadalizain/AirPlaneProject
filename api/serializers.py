@@ -11,3 +11,18 @@ class DetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = airplanes
         fields = '__all__'
+
+
+class CreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = airplanes
+        fields = '__all__'
+
+
+
+class UpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = airplanes
+        fields = '__all__'

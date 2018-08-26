@@ -18,8 +18,8 @@ from django.urls import  path
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from airplanes.views import list_view, detail_view, create_view, update_view, delete_view
-from api.views import ListView, Detailview
+from airplanes.views import list_view, detail_view, create_view, update_view, delete_view, user_login, user_register, user_logout
+from api.views import ListView, Detailview , CreateView, UpdateView, DeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,6 +30,12 @@ urlpatterns = [
     path('delete/<int:object_id>', delete_view, name='delete-page'),
     path('List/<int:object_id>', ListView.as_view(), name='List-page'),
     path('details/view/<int:object_id>', Detailview.as_view(), name='Detailview-page'),
+    path('create/view/<int:object_id>', CreateView.as_view(), name='CreateView-page'),
+    path('update/view/<int:object_id>', UpdateView.as_view(), name='UpdateView-page'),
+    path('delete/view/<int:object_id>', DeleteView.as_view(), name='DeleteView-page'),
+    path('login/view/', user_login, name='login-page'),
+    path('registration/view/', user_register, name='register-page'),
+    path('logout/', user_logout, name='logout-page'),
 ]
 
 

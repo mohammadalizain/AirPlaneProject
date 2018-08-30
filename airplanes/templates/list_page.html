@@ -8,8 +8,19 @@
 {% endblock title %}
 
 
+
+
 {% block content %}
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#www.emiratesairways.com"></a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <a href="https://www.emirates.com/kw/"> 
+    <input type="button" class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search"> </a>
+  </form>
+</nav>
 <h1>  Dubai Airport  <span class="badge badge-danger">  Emirates Airways </span></h1>
+
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -37,15 +48,19 @@
   </a>
 </div>
 
+<div class="container">
+  <div class="row">
+
+
     {% for airplane in object_list %}
 
 <!--     <div>
-        <ul>
+        <ul>1
             <li>
                 <h1>{{airplane.name}}</h1>
             </li>
             <li>
-                <p>{{airplane.weight}}</p>
+   b             <p>{{airplane.weight}}</p>
             </li>
             <li>
                 <p>{{airplane.passengers}}</p>
@@ -59,14 +74,13 @@
         <a href="{% url 'detail-page' airplane.id %}">More Detail</a>
 </div> -->
 
-<div class="row">
   
  <div class="card-body">
 
         <div class="card " style="width: 18rem;">
   <img class="card-img-top" src="{{ airplane.picture.url }}" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">airplane.name</h5>
+    <h5 class="card-title">airplane</h5>
     <p class="card-text">{{ airplane.other_info }}</p>
     <a href="{% url 'detail-page' airplane.id %}" class="btn btn-primary ml-2">More Detail     </a>
  
@@ -83,14 +97,15 @@
         
         </div>
 
-        </div>
-
 
 
 
       
     {% endfor %}
-    <a href="{% url 'logout-page' %}" class="btn btn-primary">      Logout</a>
+     </div>
+</div>
+    <a href="{% url 'logout-page' %}" class="btn btn-primary text-right"   >      Logout</a>
+    <p class="text-right"></p>
     {% endblock content %}
 
 
